@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <title>MCD-Search</title>
+</head>
+<body>
+    <div id="bg">
+        <div id="top">
+            <div id="logo"></div>
+            <div id="name-parent">
+                <h1>MCD-Search</h1>
+            </div>
+        </div>
+        <div id="middle">
+            <input type="text" id="search-box" placeholder="Search like a legend..." spellcheck="false" onchange="search(this.value)">
+        </div>
+    </div>
+
+    <div id="popup-box" class="hidden">
+        <span id="popup-box-text"></span>
+        <button onclick="document.getElementById('popup-box').classList.add('hidden'); document.getElementById('popup-box-text').innerText = ''; document.getElementById('bg').style.opacity = 1;">OK</button>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

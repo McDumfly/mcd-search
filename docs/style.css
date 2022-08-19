@@ -1,0 +1,98 @@
+body {
+    background-color: rgb(36, 36, 36);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 600px;
+    height: 50px;
+    border: 0px solid lightskyblue;
+    outline: none;
+    transition-duration: 0.05s;
+    border-radius: 6px;
+    background-color: rgb(66, 66, 66);
+    color: white;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+input:focus {
+    border: 2px solid lightskyblue;
+    transition-duration: 0.07s;
+}
+
+#top {
+    text-align: center;
+}
+
+#middle {
+    text-align: center;
+}
+
+#logo {
+    background-image: url("images/icon.png");
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border-radius: 12px;
+    margin-top: 70px;
+    margin-bottom: 10px;
+    position: sticky;
+    left: 50%;
+    top: 110px;
+    transform: translate(-50%, -50%);
+}
+
+#name-parent h1 {
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#popup-box {
+    width: 600px;
+    height: 280px;
+    background-color: rgb(10, 10, 10);
+    text-align: left;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+}
+
+#popup-box button {
+    position: fixed;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(60, 60, 60);
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    border: 0px solid rgb(40, 40, 40);
+    border-radius: 50px;
+    transition-duration: 0.2s;
+}
+
+#popup-box button:hover {
+    background-color: rgb(80, 80, 80);
+    transition-duration: 0.2s;
+}
+
+#popup-box-text {
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    user-select: none;
+}
