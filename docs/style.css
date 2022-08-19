@@ -5,7 +5,7 @@ body {
 
 input {
     font-family: Arial, Helvetica, sans-serif;
-    width: 600px;
+    width: 50%;
     height: 50px;
     border: 0px solid lightskyblue;
     outline: none;
