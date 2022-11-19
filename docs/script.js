@@ -23,11 +23,6 @@ function ud() {
     localStorage.setItem("mcd-search-data", JSON.stringify(data));
 }
 
-if (window.location.href.slice(0, 46) == "https://mcdumfly.github.io/mcd-search/#search=") {
-    const sw = window.location.href.slice(46, window.location.href.length);
-    goFind(sw);
-}
-
 const search = (keyword) => {
     keyword = String(keyword);
 
@@ -114,6 +109,11 @@ const goFind = (kw) => {
     } else {
         window.open(data.srcengine + kw);
     }
+}
+
+if (window.location.href.slice(0, 46) == "https://mcdumfly.github.io/mcd-search/#search=") {
+    const sw = window.location.href.slice(46, window.location.href.length);
+    goFind(sw);
 }
 
 function delkw(num) {
