@@ -114,6 +114,7 @@ const goFind = (kw) => {
 if (window.location.href.slice(0, 46) == "https://mcdumfly.github.io/mcd-search/#search=") {
     const sw = window.location.href.slice(46, window.location.href.length);
     goFind(sw);
+    window.location.href = "https://mcdumfly.github.io/mcd-search/";
 }
 
 function delkw(num) {
