@@ -121,3 +121,5 @@ function delkw(num) {
     data.shorter.splice(num, 1);
     ud();
 }
+
+document.getElementById("search-box").focus();
