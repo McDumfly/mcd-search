@@ -1,10 +1,11 @@
 body {
     background-color: rgb(36, 36, 36);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
 }
 
 input {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 50%;
     height: 50px;
     border: 0px solid lightskyblue;
@@ -31,7 +32,7 @@ input:focus {
 }
 
 #logo {
-    background-image: url("images/icon.png");
+    background-image: url("images/mcd-pfp.jpg");
     width: 100px;
     height: 100px;
     background-repeat: no-repeat;
@@ -44,12 +45,17 @@ input:focus {
     left: 50%;
     top: 110px;
     transform: translate(-50%, -50%);
-    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+#logo:hover {
+    width: 105px;
+    height: 105px;
+    transition-duration: 0.2s;
 }
 
 #name-parent h1 {
     color: white;
-    cursor: pointer;
     user-select: none;
 }
 
@@ -130,4 +136,121 @@ input:focus {
     position: absolute;
     top: 50px;
     padding-left: 30px;
+}
+
+#menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    transition-duration: 0.2s;
+    border-radius: 12px;
+    width: 50px;
+    height: 50px;
+    transition: background-color 200ms linear;
+}
+
+#menu:hover {
+    background-color: rgba(58, 58, 58, 0.705);
+    transition-duration: 0.2s;
+    transition: background-color 200ms linear;
+}
+
+.menu-dot-parent {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-5%, -50%);
+
+}
+
+.menu-dot {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    margin-bottom: 3px;
+}
+
+#menu-list {
+    background-color: rgba(53, 53, 53, 0.705);
+    width: 190px;
+    height: 173px;
+    border-radius: 6px;
+    font-size: 16px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    display: none;
+}
+
+#menu-list div span {
+    color: white;
+    transition-duration: 0.2s;
+    border-radius: 4px;
+    cursor: default;
+
+    /* padding-left: 10px;
+    margin-left: 10px;
+    
+    padding-right: 10px;
+    margin-right: 10px;
+    
+    padding-top: 5px;
+    margin-top: 5px; */
+
+   /*  width: 170px;
+    height: 20px;
+
+    margin-left: 10px;
+    padding-left: 10px; */
+
+    padding-left: 30px;
+    vertical-align: middle;
+    line-height: 25px;
+
+    
+}
+
+#menu-list div {
+    width: 180px;
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+#menu-list div:hover {
+    background-color: rgba(94, 94, 94, 0.705);
+    transition-duration: 0.2s;
+}
+
+#menu-list .hr {
+    margin-left: 5px;
+    width: 180px;
+    background-color: gray;
+    border: none;
+    height: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#changeBg {
+    background-image: url("images/pen.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition-duration: 0.2s;
+    border-radius: 6px;
+}
+
+#changeBg:hover {
+    background-color: rgba(53, 53, 53, 0.705);
+    transition-duration: 0.2s;
 }

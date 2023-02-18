@@ -5,6 +5,9 @@ const popupBoxText = document.getElementById("popup-box-text");
 let data = {
     srcengine: "https://www.google.com/search?q=",
     commands: true,
+    settings: {
+        closeAfterCrossLink: false,
+    },
 
     shorter : [
         "fb:https://www.facebook.com",
@@ -114,10 +117,67 @@ const goFind = (kw) => {
 if (window.location.href.slice(0, 46) == "https://mcdumfly.github.io/mcd-search/#search=") {
     const sw = window.location.href.slice(46, window.location.href.length);
     goFind(sw);
-    window.location.href = "https://mcdumfly.github.io/mcd-search/";
+    data.settings.closeAfterCrossLink == true ? window.close() : window.location.href = "https://mcdumfly.github.io/mcd-search/";
 }
 
 function delkw(num) {
     data.shorter.splice(num, 1);
     ud();
 }
+
+window.onkeydown = (e) => {
+    let key;
+
+    if(window.event) {                
+        key = e.keyCode;
+    } else if(e.which){             
+        key = e.which;
+    }
+
+    if (key == 36) {
+        document.getElementById("search-box").focus();
+    }
+
+    if (key == 13) {
+        if (document.getElementById("search-box") == document.activeElement) {
+            search(document.getElementById("search-box").value);
+        }
+    }
+}
+
+document.getElementById("search-box").focus();
+
+window.addEventListener("contextmenu", 
+    function (e) { 
+        e.preventDefault(); 
+    }, false
+);
+
+let menuopened = 0;
+document.getElementById("menu").onclick = () => {
+    document.getElementById("menu-list").style.display = "block";
+    menuopened  = 1;
+}
+
+window.addEventListener('click', function(e){   
+    if (document.getElementById('menu-list').contains(e.target)){
+        // noting
+    } else {
+        if (menuopened == 2) {
+            document.getElementById("menu-list").style.display = "none";
+        }
+        menuopened = 2;
+    }
+});
+
+document.getElementById('search-box').o = () => {
+}
+
+function changeLogoTitle() {
+    setTimeout(function() {
+        document.getElementById("logo").title = "Search to > " + document.getElementById('search-box').value;
+        changeLogoTitle();
+    }, 10);
+}
+
+changeLogoTitle();

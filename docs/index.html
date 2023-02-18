@@ -8,16 +8,18 @@
     <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
     <title>MCD-Search</title>
 </head>
-<body>
+<body id="rlBG">
+
     <div id="bg">
         <div id="top">
             <div id="logo" onclick="search(document.getElementById('search-box').value)"></div>
-            <div id="name-parent" onclick="window.location.href = '';">
+            <div id="name-parent">
                 <h1>MCD-Search</h1>
             </div>
         </div>
+
         <div id="middle">
-            <input type="text" id="search-box" placeholder="Search like a legend..." spellcheck="false" onchange="search(this.value)">
+            <input type="text" id="search-box" placeholder="Search like a legend..." spellcheck="false">
         </div>
     </div>
 
@@ -25,6 +27,30 @@
         <span id="popup-box-text"></span>
         <button onclick="document.getElementById('popup-box').classList.add('hidden'); document.getElementById('popup-box-text').innerText = ''; document.getElementById('bg').style.opacity = 1;">OK</button>
     </div>
+
+    <div id="menu" title="Open Menu">
+        <div class="menu-dot-parent">
+            <div class="menu-dot"></div>
+            <div class="menu-dot"></div>
+            <div class="menu-dot"></div>
+        </div>
+    </div>
+
+    <div id="menu-list">
+        <br>
+        <div style="margin-top: -18px;"></div>
+        <div><span>New tab</span></div>
+        <div><span>New window</span></div>
+        <div class="hr"></div>
+        <div><span>Settings</span></div>
+        <div class="hr"></div>
+        <div><span>Support</span></div>
+        <div class="hr"></div>
+        <div><span>Exit</span></div>
+    </div>
+
+    <div id="changeBg"></div>
+
 </body>
 <script src="script.js"></script>
 </html>
