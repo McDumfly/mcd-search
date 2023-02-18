@@ -125,7 +125,6 @@ function delkw(num) {
     ud();
 }
 
-<<<<<<< HEAD
 window.onkeydown = (e) => {
     let key;
 
@@ -182,6 +181,3 @@ function changeLogoTitle() {
 }
 
 changeLogoTitle();
-=======
-document.getElementById("search-box").focus();
->>>>>>> 8b07e68d28dda94d74585c7524a685e3688c0587
