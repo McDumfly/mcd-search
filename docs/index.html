@@ -9,7 +9,6 @@
     <title>MCD-Search</title>
 </head>
 <body id="rlBG">
-
     <div id="bg">
         <div id="top">
             <div id="logo" onclick="search(document.getElementById('search-box').value)"></div>
@@ -51,6 +50,22 @@
 
     <div id="changeBg"></div>
 
+    
+    <div id="bgeditor">
+        <div id="closebgeditor" class="closebtn"></div>
+
+        <div class="buttons" style="text-align: center;">
+            <label class="bge-upload">
+                Upload
+                <input type="file" id="bgimg" style="display: none;">
+            </label>
+            <div id="setbg">Set</div>
+            <input type="text" placeholder="Or paste here a link" id="bgimglink">
+        </div>
+        
+        <div id="bgpreview"></div>
+    </div>
+
 </body>
-<script src="script.js"></script>
+<script src="script.js" type="text/javascript"></script>
 </html>

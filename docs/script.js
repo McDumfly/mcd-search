@@ -1,6 +1,10 @@
+function gebi(id) {
+    return document.getElementById(id);
+}
+
 const sdata = localStorage.getItem("mcd-search-data");
-const popupBox = document.getElementById("popup-box");
-const popupBoxText = document.getElementById("popup-box-text");
+const popupBox = gebi("popup-box");
+const popupBoxText = gebi("popup-box-text");
 
 let data = {
     srcengine: "https://www.google.com/search?q=",
@@ -13,13 +17,19 @@ let data = {
         "fb:https://www.facebook.com",
         "ig:https://www.instagram.com",
         "yt:https://www.youtube.com",
-    ]
+    ],
+
+    bg: "",
 }
 
 if (sdata != null) {
     data = JSON.parse(sdata);
 } else {
     ud();
+}
+
+if (data.bg !== "") {
+    gebi("rlBG").style.backgroundImage = `url(${data.bg})`;
 }
 
 function ud() {
@@ -62,7 +72,7 @@ const search = (keyword) => {
 
             popupBox.classList.remove("hidden");
 
-            document.getElementById("bg").style.opacity = 0.03;
+            gebi("bg").style.opacity = 0.03;
 
         } else if (keyword.startsWith("$>>del kws") || keyword.startsWith("$>>del keywords")) {
 
@@ -74,7 +84,7 @@ const search = (keyword) => {
 
             popupBox.classList.remove("hidden");
 
-            document.getElementById("bg").style.opacity = 0.03;
+            gebi("bg").style.opacity = 0.03;
         }
         
         else {
@@ -135,17 +145,17 @@ window.onkeydown = (e) => {
     }
 
     if (key == 36) {
-        document.getElementById("search-box").focus();
+        gebi("search-box").focus();
     }
 
     if (key == 13) {
-        if (document.getElementById("search-box") == document.activeElement) {
-            search(document.getElementById("search-box").value);
+        if (gebi("search-box") == document.activeElement) {
+            search(gebi("search-box").value);
         }
     }
 }
 
-document.getElementById("search-box").focus();
+gebi("search-box").focus();
 
 window.addEventListener("contextmenu", 
     function (e) { 
@@ -154,30 +164,70 @@ window.addEventListener("contextmenu",
 );
 
 let menuopened = 0;
-document.getElementById("menu").onclick = () => {
-    document.getElementById("menu-list").style.display = "block";
+gebi("menu").onclick = () => {
+    gebi("menu-list").style.display = "block";
     menuopened  = 1;
 }
 
 window.addEventListener('click', function(e){   
-    if (document.getElementById('menu-list').contains(e.target)){
+    if (gebi('menu-list').contains(e.target)){
         // noting
     } else {
         if (menuopened == 2) {
-            document.getElementById("menu-list").style.display = "none";
+            gebi("menu-list").style.display = "none";
         }
         menuopened = 2;
     }
 });
 
-document.getElementById('search-box').o = () => {
+gebi('search-box').o = () => {
 }
 
 function changeLogoTitle() {
     setTimeout(function() {
-        document.getElementById("logo").title = "Search to > " + document.getElementById('search-box').value;
+        gebi("logo").title = "Search to > " + gebi('search-box').value;
         changeLogoTitle();
     }, 10);
 }
 
 changeLogoTitle();
+
+gebi("changeBg").onclick = () => {
+    gebi("bgeditor").style.display = "block";
+    gebi("bgeditor").style.opacity = "1";
+}
+
+gebi("closebgeditor").onclick = () => {
+    gebi("bgeditor").style.opacity = "0";
+    setTimeout(function() {
+        gebi("bgeditor").style.display = "none";
+    }, 200);
+}
+
+gebi("bgimg").onchange = () => {
+    const files = gebi("bgimg").files;
+    if (!files || files.length == 0)
+        return;
+    const file = files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+        gebi("bgpreview").style.backgroundImage = "url(" + reader.result + ")";
+
+        gebi("setbg").onclick = () => {
+            gebi("rlBG").style.backgroundImage = "url(" + reader.result + ")";
+            data.bg = reader.result;
+            ud();
+        }
+    };
+}
+
+gebi("bgimglink").onchange = () => {
+    gebi("bgpreview").style.backgroundImage = "url(" + gebi("bgimglink").value + ")";
+    gebi("setbg").onclick = () => {
+        gebi("rlBG").style.backgroundImage = "url(" + gebi("bgimglink").value + ")";
+        data.bg = gebi("bgimglink").value;
+        gebi("bgimglink").value = "";
+        ud();
+    }
+}
