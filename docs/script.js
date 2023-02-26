@@ -145,6 +145,7 @@ window.onkeydown = (e) => {
     }
 
     if (key == 36) {
+        e.preventDefault(); 
         gebi("search-box").focus();
     }
 
