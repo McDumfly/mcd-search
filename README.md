@@ -6,7 +6,7 @@
 Nice, minimalist, highly customizable, modern UI with maximum privacy.
 
 
-> Current latest version: <a href="https://github.com/McDumfly/mcd-search/releases/tag/v1.1.8.1-alpha">1.1.8.1-alpha</a>
+> Current latest version: <a href="https://github.com/McDumfly/mcd-search/releases/tag/v1.1.8.2-alpha">1.1.8.2-alpha</a>
 
 <br>
 
