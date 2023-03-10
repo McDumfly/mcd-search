@@ -13,6 +13,7 @@ Nice, minimalist, highly customizable, modern UI with maximum privacy.
 Beta versions:
 
 Alpha versions:
+- <a href="https://github.com/McDumfly/mcd-search/releases/tag/v1.1.8.2-alpha">1.1.8.2-alpha</a>
 - <a href="https://github.com/McDumfly/mcd-search/releases/tag/v1.1.8.1-alpha">1.1.8.1-alpha</a>
 - <a href="https://github.com/McDumfly/mcd-search/releases/tag/v1.1.8-alpha">1.1.8-alpha</a>
 - <a href="https://github.com/McDumfly/mcd-search/releases/tag/v1.1.1-alpha">1.1.1-alpha</a>
