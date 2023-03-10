@@ -12,18 +12,32 @@ input {
     height: 50px;
     border: 2px solid rgba(0, 0, 0, 0);
     outline: none;
-    transition-duration: 0.05s;
     border-radius: 6px;
     background-color: rgba(66, 66, 66, 0.582);
     color: white;
     padding-left: 15px;
     font-size: 18px;
     backdrop-filter: blur(40px);
+    transition-duration: 0.2s;
 }
 
 input:focus {
     border: 2px solid rgb(135, 206, 250);
-    transition-duration: 0.07s;
+    transition-duration: 0.2s;
+    width: 51%;
+    height: 55px;
+    background-color: rgba(66, 66, 66, 0.404);
+}
+
+input:not(:focus) {
+    transition-duration: 0.2s;
+    border: 2px solid rgba(0, 0, 0, 0);
+    width: 50%;
+    height: 50px;
+}
+
+input:hover {
+    background-color: rgba(66, 66, 66, 0.404);
 }
 
 #top {
