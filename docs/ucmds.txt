@@ -1,0 +1,10 @@
+set srcengine
+    - chrome || google: change the search engine to google
+    - duckduckgo || duck duck go: change the search engine to DuckDuckGo
+    - bing: change the search engine to bing
+
+set kw || set keyword: create a new keyword
+
+get kws || get keywords: get the list of the enabled keywords
+
+del kws || del keywords: delete keyword/keywords
